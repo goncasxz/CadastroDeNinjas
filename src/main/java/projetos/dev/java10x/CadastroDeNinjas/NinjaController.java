@@ -5,11 +5,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping
-public class Controller {
+public class NinjaController {
 
     @GetMapping("/boasVindas")
     public String boasVindas() {
         return "Essa é minha primeira mensagem nessa rota";
+    }
+
+    @GetMapping("/teste")
+    public String teste() {
+        return  "Teste de mapping";
     }
 
 
