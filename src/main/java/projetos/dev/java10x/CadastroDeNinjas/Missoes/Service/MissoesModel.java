@@ -3,6 +3,8 @@ package projetos.dev.java10x.CadastroDeNinjas.Missoes.Service;
 import jakarta.persistence.*;
 import projetos.dev.java10x.CadastroDeNinjas.Ninjas.Service.NinjaModel;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tb_missoes")
 public class MissoesModel {
@@ -12,16 +14,19 @@ public class MissoesModel {
     private Long id;
     private String nome ;
     private String rank;
-    private NinjaModel ninja;
+
+    // @OneToMany - 1 missão varios ninjas
+    @OneToMany(mappedBy = "missoes")
+    private List<NinjaModel> ninjas;
 
     public MissoesModel() {
     }
 
-    public MissoesModel(Long id, String nome, String rank, NinjaModel ninja) {
+    public MissoesModel(Long id, String nome, String rank, List<NinjaModel> ninjas) {
         this.id = id;
         this.nome = nome;
         this.rank = rank;
-        this.ninja = ninja;
+        this.ninjas = ninjas;
     }
 
     public Long getId() {
@@ -48,11 +53,11 @@ public class MissoesModel {
         this.rank = rank;
     }
 
-    public NinjaModel getNinja() {
-        return ninja;
+    public List<NinjaModel> getNinjas() {
+        return ninjas;
     }
 
-    public void setNinja(NinjaModel ninja) {
-        this.ninja = ninja;
+    public void setNinjas(List<NinjaModel> ninjas) {
+        this.ninjas = ninjas;
     }
 }
