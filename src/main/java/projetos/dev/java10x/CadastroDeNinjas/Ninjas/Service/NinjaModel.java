@@ -1,9 +1,12 @@
-package projetos.dev.java10x.CadastroDeNinjas;
+package projetos.dev.java10x.CadastroDeNinjas.Ninjas.Service;
 
 import jakarta.persistence.*;
+import projetos.dev.java10x.CadastroDeNinjas.Missoes.Service.MissoesModel;
+
+import java.util.List;
 
 @Entity
-@Table(name = "tb_cadastro" )
+@Table(name = "tb_cadastro")
 public class NinjaModel {
 
     @Id
@@ -12,6 +15,7 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+    private List<MissoesModel> missoesList;
 
     public NinjaModel() {
     }
