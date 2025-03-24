@@ -1,12 +1,18 @@
 package projetos.dev.java10x.CadastroDeNinjas.Missoes.Service;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import projetos.dev.java10x.CadastroDeNinjas.Ninjas.Service.NinjaModel;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MissoesModel {
 
     @Id
@@ -19,45 +25,4 @@ public class MissoesModel {
     @OneToMany(mappedBy = "missoes")
     private List<NinjaModel> ninjas;
 
-    public MissoesModel() {
-    }
-
-    public MissoesModel(Long id, String nome, String rank, List<NinjaModel> ninjas) {
-        this.id = id;
-        this.nome = nome;
-        this.rank = rank;
-        this.ninjas = ninjas;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getRank() {
-        return rank;
-    }
-
-    public void setRank(String rank) {
-        this.rank = rank;
-    }
-
-    public List<NinjaModel> getNinjas() {
-        return ninjas;
-    }
-
-    public void setNinjas(List<NinjaModel> ninjas) {
-        this.ninjas = ninjas;
-    }
 }
