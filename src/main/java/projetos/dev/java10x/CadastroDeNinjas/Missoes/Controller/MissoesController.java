@@ -4,6 +4,9 @@ import org.springframework.web.bind.annotation.*;
 import projetos.dev.java10x.CadastroDeNinjas.Missoes.Model.MissoesModel;
 import projetos.dev.java10x.CadastroDeNinjas.Missoes.Service.MissoesService;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/missoes")
 public class MissoesController {
@@ -15,8 +18,13 @@ public class MissoesController {
     }
 
     @GetMapping("/listar")
-    public String listarMissoes() {
-        return "missoes listadas com sucesso";
+    public List<MissoesModel> listarMissoes() {
+        return missoesService.listarMissoes();
+    }
+
+    @GetMapping("/listar/{id}")
+    public Optional<MissoesModel> listarMissoesId(@PathVariable Long id) {
+        return missoesService.listarMissoesId(id);
     }
 
     @PostMapping("/criar")
