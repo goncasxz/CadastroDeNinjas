@@ -1,10 +1,18 @@
 package projetos.dev.java10x.CadastroDeNinjas.Missoes.Controller;
 
 import org.springframework.web.bind.annotation.*;
+import projetos.dev.java10x.CadastroDeNinjas.Missoes.Model.MissoesModel;
+import projetos.dev.java10x.CadastroDeNinjas.Missoes.Service.MissoesService;
 
 @RestController
 @RequestMapping("/missoes")
 public class MissoesController {
+
+    private MissoesService missoesService;
+
+    public MissoesController(MissoesService missoesService) {
+        this.missoesService = missoesService;
+    }
 
     @GetMapping("/listar")
     public String listarMissoes() {
@@ -12,8 +20,8 @@ public class MissoesController {
     }
 
     @PostMapping("/criar")
-    public String criarMissao() {
-        return "missao criada com sucesso";
+    public MissoesModel criarMissoes(@RequestBody MissoesModel missao) {
+        return missoesService.adicionarMissoes(missao);
     }
 
     @PutMapping("/alterarID")
