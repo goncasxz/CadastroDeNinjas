@@ -16,7 +16,7 @@ public class NinjaService {
         this.ninjaRepository = ninjaRepository;
     }
 
-    //TODO: Adicionar um ninja
+    //Adicionar um ninja
     public NinjaModel criarNinja(NinjaModel ninja) {
         return ninjaRepository.save(ninja);
     }
@@ -29,5 +29,10 @@ public class NinjaService {
     //Listar os ninjas por ID
     public Optional<NinjaModel> listarNinjasId(Long id) {
         return ninjaRepository.findById(id);
+    }
+
+    //Deletar ninja por ID
+    public void deletarPorId(Long id) {
+        ninjaRepository.deleteById(id);
     }
 }
