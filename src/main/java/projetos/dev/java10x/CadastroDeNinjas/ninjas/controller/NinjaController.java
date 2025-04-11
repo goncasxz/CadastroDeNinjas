@@ -1,7 +1,7 @@
-package projetos.dev.java10x.CadastroDeNinjas.Ninjas.Controller;
+package projetos.dev.java10x.CadastroDeNinjas.ninjas.controller;
 import org.springframework.web.bind.annotation.*;
-import projetos.dev.java10x.CadastroDeNinjas.Ninjas.Model.NinjaModel;
-import projetos.dev.java10x.CadastroDeNinjas.Ninjas.Service.NinjaService;
+import projetos.dev.java10x.CadastroDeNinjas.ninjas.model.NinjaModel;
+import projetos.dev.java10x.CadastroDeNinjas.ninjas.service.NinjaService;
 
 import java.util.List;
 import java.util.Optional;
@@ -40,9 +40,9 @@ public class NinjaController {
     }
 
     // TODO: Alterar dados dos Ninjas
-    @PutMapping("/alterarID")
-    public String alterarNinjaPorId() {
-        return "Alterar ninja por id";
+    @PutMapping("/alterar/{id}")
+    public NinjaModel alterarNinjaPorId(@PathVariable Long id,@RequestBody NinjaModel ninjaAtualizado) {
+        return ninjaService.atualizarNinja(id, ninjaAtualizado);
     }
 
     // TODO: Deletar Ninjas

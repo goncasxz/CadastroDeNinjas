@@ -1,14 +1,13 @@
-package projetos.dev.java10x.CadastroDeNinjas.Ninjas.Model;
+package projetos.dev.java10x.CadastroDeNinjas.ninjas.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import projetos.dev.java10x.CadastroDeNinjas.Missoes.Model.MissoesModel;
+import lombok.*;
+import projetos.dev.java10x.CadastroDeNinjas.missoes.model.MissoesModel;
 
 @Entity
 @Table(name = "tb_cadastro")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class NinjaModel {

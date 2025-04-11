@@ -1,9 +1,8 @@
-package projetos.dev.java10x.CadastroDeNinjas.Missoes.Service;
+package projetos.dev.java10x.CadastroDeNinjas.missoes.service;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-import projetos.dev.java10x.CadastroDeNinjas.Missoes.Model.MissoesModel;
-import projetos.dev.java10x.CadastroDeNinjas.Missoes.Repository.MissoesRepository;
+import projetos.dev.java10x.CadastroDeNinjas.missoes.model.MissoesModel;
+import projetos.dev.java10x.CadastroDeNinjas.missoes.repository.MissoesRepository;
 
 import java.util.List;
 import java.util.Optional;

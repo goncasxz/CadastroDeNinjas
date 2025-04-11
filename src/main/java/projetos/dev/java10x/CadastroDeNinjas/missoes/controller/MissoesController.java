@@ -1,8 +1,8 @@
-package projetos.dev.java10x.CadastroDeNinjas.Missoes.Controller;
+package projetos.dev.java10x.CadastroDeNinjas.missoes.controller;
 
 import org.springframework.web.bind.annotation.*;
-import projetos.dev.java10x.CadastroDeNinjas.Missoes.Model.MissoesModel;
-import projetos.dev.java10x.CadastroDeNinjas.Missoes.Service.MissoesService;
+import projetos.dev.java10x.CadastroDeNinjas.missoes.model.MissoesModel;
+import projetos.dev.java10x.CadastroDeNinjas.missoes.service.MissoesService;
 
 import java.util.List;
 import java.util.Optional;

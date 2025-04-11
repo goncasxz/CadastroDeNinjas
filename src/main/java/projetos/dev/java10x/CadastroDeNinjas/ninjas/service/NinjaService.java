@@ -1,8 +1,8 @@
-package projetos.dev.java10x.CadastroDeNinjas.Ninjas.Service;
+package projetos.dev.java10x.CadastroDeNinjas.ninjas.service;
 
 import org.springframework.stereotype.Service;
-import projetos.dev.java10x.CadastroDeNinjas.Ninjas.Model.NinjaModel;
-import projetos.dev.java10x.CadastroDeNinjas.Ninjas.Repository.NinjaRepository;
+import projetos.dev.java10x.CadastroDeNinjas.ninjas.model.NinjaModel;
+import projetos.dev.java10x.CadastroDeNinjas.ninjas.repository.NinjaRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,6 +29,15 @@ public class NinjaService {
     //Listar os ninjas por ID
     public Optional<NinjaModel> listarNinjasId(Long id) {
         return ninjaRepository.findById(id);
+    }
+    
+    //Atualizar ninja por ID
+    public NinjaModel atualizarNinja(Long id, NinjaModel ninjaAtualizado) {
+        if (ninjaRepository.existsById(id)) {
+            ninjaAtualizado.setId(id);
+            return ninjaRepository.save(ninjaAtualizado);
+        }
+        return null;
     }
 
     //Deletar ninja por ID
