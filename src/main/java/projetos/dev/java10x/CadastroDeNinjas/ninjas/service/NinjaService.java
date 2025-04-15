@@ -76,6 +76,7 @@ public class NinjaService {
             }
 
             ninjaAtualizado = ninjaRepository.save(ninjaAtualizado);
+            return ninjaMapper.map(ninjaAtualizado);
         }
         return null;
     }

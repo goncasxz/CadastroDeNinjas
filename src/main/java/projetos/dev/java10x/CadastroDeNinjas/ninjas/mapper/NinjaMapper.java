@@ -1,6 +1,5 @@
 package projetos.dev.java10x.CadastroDeNinjas.ninjas.mapper;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import projetos.dev.java10x.CadastroDeNinjas.ninjas.dto.NinjaDTO;
 import projetos.dev.java10x.CadastroDeNinjas.ninjas.model.NinjaModel;
