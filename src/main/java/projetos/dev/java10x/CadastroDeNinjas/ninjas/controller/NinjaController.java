@@ -1,5 +1,6 @@
 package projetos.dev.java10x.CadastroDeNinjas.ninjas.controller;
 import org.springframework.web.bind.annotation.*;
+import projetos.dev.java10x.CadastroDeNinjas.ninjas.dto.NinjaDTO;
 import projetos.dev.java10x.CadastroDeNinjas.ninjas.model.NinjaModel;
 import projetos.dev.java10x.CadastroDeNinjas.ninjas.service.NinjaService;
 
@@ -23,25 +24,25 @@ public class NinjaController {
 
     // TODO: Adicionar Ninjas
     @PostMapping("/criar")
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninja) {
         return ninjaService.criarNinja(ninja);
     }
 
     // TODO: Procurar Ninjas por ID
     @GetMapping("/listar/{id}")
-    public Optional<NinjaModel> mostrarNinjasPorId(@PathVariable Long id) {
+    public Optional<NinjaDTO> mostrarNinjasPorId(@PathVariable Long id) {
         return ninjaService.listarNinjasId(id);
     }
 
     // TODO: Mostrar todos os Ninjas
     @GetMapping("/listar")
-    public List<NinjaModel> listarNinjas() {
+    public List<NinjaDTO> listarNinjas() {
         return ninjaService.listarNinjas();
     }
 
     // TODO: Alterar dados dos Ninjas
-    @PutMapping("/alterar/{id}")
-    public NinjaModel alterarNinjaPorId(@PathVariable Long id,@RequestBody NinjaModel ninjaAtualizado) {
+    @PatchMapping("/alterar/{id}")
+    public NinjaDTO alterarNinjaPorId(@PathVariable Long id,@RequestBody NinjaDTO ninjaAtualizado) {
         return ninjaService.atualizarNinja(id, ninjaAtualizado);
     }
 
