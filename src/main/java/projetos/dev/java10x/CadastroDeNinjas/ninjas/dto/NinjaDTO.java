@@ -17,4 +17,24 @@ public class NinjaDTO   {
     private Integer idade;
     private MissoesModel missoes;
     private String rank;
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("NinjaDTO{");
+
+        if (id != null) sb.append("id=").append(id).append(", ");
+        if (nome != null) sb.append("nome='").append(nome).append("', ");
+        if (email != null) sb.append("email='").append(email).append("', ");
+        if (idade != null) sb.append("idade=").append(idade).append(", ");
+        if (imgUrl != null) sb.append("imgUrl='").append(imgUrl).append("', ");
+        if (rank != null) sb.append("rank='").append(rank).append("', ");
+        if (missoes != null) sb.append("missoes=").append(missoes).append(", ");
+
+        if (sb.lastIndexOf(", ") == sb.length() - 2) {
+            sb.delete(sb.length() - 2, sb.length());
+        }
+
+        sb.append("}");
+        return sb.toString();
+    }
 }

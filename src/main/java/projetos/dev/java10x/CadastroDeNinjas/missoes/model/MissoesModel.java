@@ -27,4 +27,13 @@ public class MissoesModel {
     @JsonIgnore
     private List<NinjaModel> ninjas;
 
+    @Override
+    public String toString() {
+        return "MissoesModel{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", rank='" + rank + '\'' +
+                '}';
+    }
+
 }

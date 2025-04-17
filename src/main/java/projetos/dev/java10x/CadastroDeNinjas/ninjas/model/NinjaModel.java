@@ -36,6 +36,4 @@ public class NinjaModel {
     @ManyToOne
     @JoinColumn(name = "missoes_id") //foreign key
     private MissoesModel missoes;
-
-
 }
