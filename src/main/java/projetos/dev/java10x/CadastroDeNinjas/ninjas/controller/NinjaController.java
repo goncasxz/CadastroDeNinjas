@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping("/ninjas")
 public class NinjaController {
 
-    private final NinjaService ninjaService;
+    private final  NinjaService ninjaService;
 
     public NinjaController(NinjaService ninjaService) {
         this.ninjaService = ninjaService;

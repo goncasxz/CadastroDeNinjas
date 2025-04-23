@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Tabela de Ninjas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdf5e6;
+            color: #2d2d2d;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff7b00;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ff7b00;
+            color: white;
+        }
+
+        td img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ff7b00; /* contorno laranja */
+            box-shadow: 0 0 5px rgba(255, 123, 0, 0.6); /* brilho suave */
+            transition: transform 0.2s;
+        }
+
+        td img:hover {
+            transform: scale(1.05);
+        }
+
+        .action-icons a {
+            margin: 0 4px;
+            color: #ff7b00;
+            font-size: 1.2em;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .action-icons a:hover {
+            color: #000;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #ffe5b4;
+        }
+
+        .btn-adicionar {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            background-color: #10b981;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(16, 185, 129, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        .btn-adicionar:hover {
+            background-color: #059669;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Ninjas</h1>
+    <a class="btn-adicionar" th:href="@{/ninjas/ui/adicionar}">Adicionar novo Ninja</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Ações</th>
+                <th>Imagem</th>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Email</th>
+                <th>Rank</th>
+                <th>Missoes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each ="ninja: ${ninjas}">
+                <td class="action-icons">
+                    <a th:href="@{/ninjas/ui/listar/{id}(id=${ninja.id})}" title="Ver detalhes"><i class="bi bi-eye"></i></a>
+                    <a th:href="@{/ninjas/ui/#/{id}(id=${ninja.id})}" title="Alterar"><i class="bi bi-pencil-square"></i></a>
+                    <a th:href="@{/ninjas/ui/deletar/{id}(id=${ninja.id})}" title="Deletar"><i class="bi bi-trash"></i></a>
+                </td>
+                <td><img th:src="${ninja.imgUrl}"></td>
+                <td th:text="${ninja.id}"></td>
+                <td th:text="${ninja.nome}"></td>
+                <td th:text="${ninja.idade}"></td>
+                <td th:text="${ninja.email}"></td>
+                <td th:text="${ninja.rank}"></td>
+                <td>
+                    <span th:if="${ninja.missoes}"><span th:text="${ninja.missoes.nome}"></span>, Dificuldade: <span th:text="${ninja.missoes.rank}"></span></span>
+                    <span th:if="${ninja.missoes == null}">Sem Missões cadastradas para o ninja</span>
+                </td>
+
+
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
