@@ -10,6 +10,7 @@ import projetos.dev.java10x.CadastroDeNinjas.missoes.model.MissoesModel;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "missoes")
 public class NinjaModel {
 
     @Id
