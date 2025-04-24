@@ -43,6 +43,24 @@ public class NinjaControllerUi {
         return "redirect:/ninjas/ui/listar";
     }
 
+    @GetMapping("/atualizacao/{id}")
+    public String formularioAtualizarNinja(Model model, @PathVariable Long id) {
+        Optional<NinjaDTO> ninjaDTOOptional = ninjaService.listarNinjasId(id);
+        if (ninjaDTOOptional.isPresent()) {
+            model.addAttribute("ninja", ninjaDTOOptional.get());
+            return "atualizarNinja";
+        } else {
+            return  "redirect:/ninjas/ui/listarNinjas";
+        }
+    }
+
+    @PatchMapping("/atualizar/{id}")
+    public String salvarNinjaAtualizado(@PathVariable Long id, @ModelAttribute NinjaDTO ninjaDTO, RedirectAttributes redirectAttributes) {
+        ninjaService.atualizarNinja(id, ninjaDTO);
+        redirectAttributes.addFlashAttribute("mensagem", "Ninja atualizado com sucesso");
+        return "redirect:/ninjas/ui/listar";
+    }
+
     @GetMapping("/listar")
     public String listarNinjas(Model model) {
         List<NinjaDTO> ninjas = ninjaService.listarNinjas();

@@ -114,7 +114,7 @@
             <tr th:each ="ninja: ${ninjas}">
                 <td class="action-icons">
                     <a th:href="@{/ninjas/ui/listar/{id}(id=${ninja.id})}" title="Ver detalhes"><i class="bi bi-eye"></i></a>
-                    <a th:href="@{/ninjas/ui/#/{id}(id=${ninja.id})}" title="Alterar"><i class="bi bi-pencil-square"></i></a>
+                    <a th:href="@{/ninjas/ui/atualizacao/{id}(id=${ninja.id})}" title="Alterar"><i class="bi bi-pencil-square"></i></a>
                     <a th:href="@{/ninjas/ui/deletar/{id}(id=${ninja.id})}" title="Deletar"><i class="bi bi-trash"></i></a>
                 </td>
                 <td><img th:src="${ninja.imgUrl}"></td>
