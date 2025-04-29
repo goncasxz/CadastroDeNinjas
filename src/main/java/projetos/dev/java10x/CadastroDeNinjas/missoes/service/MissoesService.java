@@ -69,6 +69,13 @@ public class MissoesService {
     }
 
     public void deletarMissao(Long id) {
+        Optional<MissoesModel> optionalMissoesModel = missoesRepository.findById(id);
+        if (optionalMissoesModel.isPresent()) {
+            MissoesModel missao = optionalMissoesModel.get();
+            if (missao.getNinjas() != null && !missao.getNinjas().isEmpty()){
+                throw new RuntimeException("Não é possível excluir a missão. Existem ninjas associados.");
+            }
+        }
         missoesRepository.deleteById(id);
     }
 }

@@ -50,7 +50,7 @@ public class NinjaControllerUi {
             model.addAttribute("ninja", ninjaDTOOptional.get());
             return "atualizarNinja";
         } else {
-            return  "redirect:/ninjas/ui/listarNinjas";
+            return  "redirect:/ninjas/ui/listar";
         }
     }
 
