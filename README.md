@@ -55,16 +55,23 @@ src
 
 ## 🔗 Endpoints da API
 
-Método	Endpoint	Descrição
-GET	/ninjas/listar	Lista todos os ninjas
-GET	/ninjas/listar/{id}	Busca ninja por ID
-POST	/ninjas/criar	Cria um novo ninja
-PUT	/ninjas/alterar/{id}	Atualiza um ninja
-DELETE	/ninjas/deletar/{id}	Deleta um ninja existente
+| Método | Endpoint                | Descrição               |
+|--------|-------------------------|-------------------------|
+| GET    | `/ninjas/listar`        | Lista todos os ninjas   |
+| GET    | `/ninjas/listar/{id}`   | Busca ninja por ID      |
+| POST   | `/ninjas/criar`         | Cria um novo ninja      |
+| PUT    | `/ninjas/alterar/{id}`  | Atualiza um ninja       |
+| DELETE | `/ninjas/deletar/{id}`  | Deleta um ninja existente |
 
-## UI da API
-A aplicação tem interface visual que pode ser acessada atráves dos endpoints.
-Página inicial: localhost:8080/ninjas/ui/listar
+---
+
+## 🖥️ UI da Aplicação
+
+A aplicação possui uma interface visual que pode ser acessada por navegador nos seguintes endpoints:
+
+- **Página inicial (lista de ninjas):**  
+  [http://localhost:8080/ninjas/ui/listar](http://localhost:8080/ninjas/ui/listar)
+
 
 
 ## 📌 Exemplo de Entidade Ninja
@@ -93,12 +100,16 @@ json
 
 ## 💡 Boas Práticas e Melhorias Futuras
 
-✅ Separação clara de camadas (Controller, Service, Repository)
-✅ Uso de ResponseEntity para respostas REST
-✅ Uso de Optional para tratar retornos nulos
-🔜 Adicionar validação com @Valid e DTOs
-🔜 Criar tratamento global de exceções com @ControllerAdvice
-🔜 Adicionar testes unitários com JUnit e Mockito
+### ✅ Boas Práticas Implementadas
+- Separação clara de camadas (`Controller`, `Service`, `Repository`)
+- Uso de `ResponseEntity` para padronizar respostas REST
+- Uso de `Optional` para evitar `NullPointerException`
+
+### 🔜 Melhorias Futuras
+- Adicionar validação de entrada com `@Valid` e uso de DTOs
+- Criar tratamento global de exceções com `@ControllerAdvice`
+- Adicionar testes unitários utilizando **JUnit** e **Mockito**
+
 
 ## ▶️ Como Rodar o Projeto
 
