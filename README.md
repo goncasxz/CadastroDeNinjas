@@ -4,14 +4,14 @@ Projeto simples de API REST usando Spring Boot para cadastro e gerenciamento de 
 
 ## 📋 Índice
 
-1. [Sobre o Projeto](#sobre-o-projeto)  
-2. [Tecnologias Utilizadas](#tecnologias-utilizadas)  
-3. [Estrutura do Projeto](#estrutura-do-projeto)  
-4. [Endpoints da API](#endpoints-da-api)  
-5. [Exemplo de Uso](#exemplo-de-uso)  
-6. [Boas Práticas e Melhorias Futuras](#boas-práticas-e-melhorias-futuras)  
-7. [Como Rodar o Projeto](#como-rodar-o-projeto)  
-8. [Licença](#licença)  
+1. [Sobre o Projeto](##sobre-o-projeto)  
+2. [Tecnologias Utilizadas](##tecnologias-utilizadas)  
+3. [Estrutura do Projeto](##estrutura-do-projeto)  
+4. [Endpoints da API](##endpoints-da-api)  
+5. [Exemplo de Uso](##exemplo-de-uso)  
+6. [Boas Práticas e Melhorias Futuras](##boas-práticas-e-melhorias-futuras)  
+7. [Como Rodar o Projeto](##como-rodar-o-projeto)  
+8. [Licença](##licença)  
 
 ---
 
