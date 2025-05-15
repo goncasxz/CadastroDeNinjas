@@ -71,7 +71,23 @@ A aplicação possui uma interface visual que pode ser acessada por navegador no
 
 - **Página inicial (lista de ninjas):**  
   [http://localhost:8080/ninjas/ui/listar](http://localhost:8080/ninjas/ui/listar)
-
+- **Adicionar ninja (formulario de inserção):**  
+  [http://localhost:8080/ninjas/ui/listar](http://localhost:8080/ninjas/ui/adicionar)
+- **Detalhe de ninja (detalhe do ninja selecionado):**  
+  [http://localhost:8080/ninjas/ui/listar](http://localhost:8080/ninjas/ui/listar/{id})
+- **Atualização do ninja (formulario de atualização de ninja selecionado):**  
+  [http://localhost:8080/ninjas/ui/listar](http://localhost:8080/ninjas/ui/atualizacao/{id})
+- **Deleção (deleção de ninja selecionado):**  
+  [http://localhost:8080/ninjas/ui/listar](http://localhost:8080/ninjas/ui/deletar/{id})
+- **Página missões (lista de missoes):**  
+  [http://localhost:8080/ninjas/ui/listar](http://localhost:8080/missoes/ui/listar)
+- **Página missão (formulario de inserção):**  
+  [http://localhost:8080/ninjas/ui/listar](http://localhost:8080/missoes/ui/adicionar)
+- **Atualização da missão (formulario de atualização da missão selecionada):**  
+  [http://localhost:8080/ninjas/ui/listar](http://localhost:8080/missoes/ui/atualizacao/{id})
+- **Deleçao (deleção da missão selecionada):**  
+  [http://localhost:8080/ninjas/ui/listar](http://localhost:8080/missoes/ui/deletar/{id})
+  
 
 
 ## 📌 Exemplo de Entidade Ninja
